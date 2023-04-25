@@ -1,9 +1,8 @@
-import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import '../styles/global.css';
 
-export default ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }) {
   const { pathname } = useRouter();
 
   return (
@@ -30,6 +29,15 @@ export default ({ Component, pageProps }) => {
                 About
               </Link>
             </li>
+
+            <li>
+              <Link
+                className={pathname === '/draggable' ? 'draggable active' : ''}
+                href="/draggable"
+              >
+                Draggable
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -39,4 +47,4 @@ export default ({ Component, pageProps }) => {
       <p>Footer</p>
     </>
   );
-};
+}
